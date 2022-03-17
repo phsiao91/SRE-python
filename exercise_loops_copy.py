@@ -40,4 +40,14 @@ while True:
         print(f"Cannot have more than {max_employees} employees")
     else: break
 
-    
+
+try:
+    with open("./resources/exercise_loops_copy.txt", "x") as file:
+        print("file created")
+        try:
+            with open("./resources/exercise_loops_copy.txt", "at") as copy:
+                copy.write(str(employee_list))
+        except FileNotFoundError: print("File not found!")
+except FileExistsError: print("File exists!")
+
+
